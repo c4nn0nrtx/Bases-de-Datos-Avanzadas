@@ -15,6 +15,19 @@ public class Tiendita {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
+        metodosProductos();
+    }
+
+    private static void listarTodos(IProductoDAO dao) throws PersistenciaException {
+        List<Producto> lista = dao.listar();
+        System.out.println("Productos en BD:");
+        for (Producto p : lista) {
+            System.out.println(p);
+        }
+        System.out.println();
+    }
+
+    private static void metodosProductos() {
         IProductoDAO dao = new ProductoDAO();
 
         try {
@@ -54,14 +67,5 @@ public class Tiendita {
                 System.err.println("Error al cerrar la conexión: " + e.getMessage());
             }
         }
-    }
-
-    private static void listarTodos(IProductoDAO dao) throws PersistenciaException {
-        List<Producto> lista = dao.listar();
-        System.out.println("Productos en BD:");
-        for (Producto p : lista) {
-            System.out.println(p);
-        }
-        System.out.println();
     }
 }
