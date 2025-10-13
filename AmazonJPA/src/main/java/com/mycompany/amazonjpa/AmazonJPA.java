@@ -13,7 +13,7 @@ public class AmazonJPA {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibreriaPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("AmazonPU");
         EntityManager em = emf.createEntityManager();
     }
 }
